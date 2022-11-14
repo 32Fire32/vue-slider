@@ -33,7 +33,6 @@ createApp({
     },
     methods: {
         prevImage(){
-            document.querySelector(`.thumb:nth-child(${this.imageSelectactiveImage})`).classList.remove('active');
             if( this.activeImage === 0 ) {
                 this.activeImage = this.slides.length - 1
             } else {
@@ -54,5 +53,12 @@ createApp({
                console.log(this.activeImage);
         },       
 
-    }
+    },
+
+    mounted() {
+        setInterval(function(){
+            this.activeImage++
+        }, 3000);
+      }
+
 }).mount('#app');

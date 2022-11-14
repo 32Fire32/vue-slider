@@ -57,10 +57,14 @@ createApp({
             console.log(this.stopAutoplay);
         },
 
-        altonmouse(){
-            if(this.stopAutoplay){
-             clearInterval(this.aPlay);
-            }
+        altOnMouse(){
+            console.log(this.stopAutoplay);
+            clearInterval(this.aPlay);
+
+        },
+
+        playOneMouse(){
+            this.aPlay = setInterval(this.prevImage, 3000);
         },
 
         altonclick(){
@@ -71,11 +75,6 @@ createApp({
 
     mounted() {
         this.aPlay = setInterval(this.prevImage, 3000);
-        console.log(this.stopAutoplay);
-
-        // if (this.stopAutoplay){
-        //     clearInterval(aPlay);
-        // }
       }
 
 }).mount('#app');

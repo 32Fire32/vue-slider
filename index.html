@@ -14,7 +14,7 @@
     <div id="app">
 
         <div class="container">
-            <div  v-on:mouseover="stopAutoplay = true" v-on:mouseleave="stopAutoplay = false" class="slider-wrapper" tabindex="0">
+            <div  v-on:mouseover="altOnMouse" v-on:mouseleave="playOneMouse" class="slider-wrapper" tabindex="0">
                 <button @click="altonclick">stop autoplay</button>
                 <div class="item">
                     <img :src="slides[activeImage].image" alt="slides[activeImage].title" />

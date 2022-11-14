@@ -29,19 +29,19 @@
                 <div class="thumbs">
                     <div class="prev" @click="prevImage"></div>
                     <div class="next" @click="nextImage"></div>
-                    <div class="thumb id0" :class="{ active: isActive }" @click="imageSelect(0)">
+                    <div class="thumb id0" :class="activeImage === 0 ? 'active' : ''" @click="imageSelect(0)">
                         <img :src="slides[0].image" alt="slides[0].title" />
                     </div>
-                    <div class="thumb id1" :class="{ active: isActive }" @click="imageSelect(1)"> 
+                    <div class="thumb id1" :class="activeImage === 1 ? 'active' : ''" @click="imageSelect(1)"> 
                         <img :src="slides[1].image" alt="slides[1].title" />
                     </div>
-                    <div class="thumb id2" :class="{ active: isActive }" @click="imageSelect(2)">
+                    <div class="thumb id2" :class="activeImage === 2 ? 'active' : ''" @click="imageSelect(2)">
                         <img :src="slides[2].image" alt="slides[2].title" />
                     </div>
-                    <div class="thumb id3" :class="{ active: isActive }" @click="imageSelect(3)">
+                    <div class="thumb id3" :class="activeImage === 3 ? 'active' : ''" @click="imageSelect(3)">
                         <img :src="slides[3].image" alt="slides[3].title" />
                     </div>
-                    <div class="thumb id4" :class="{ active: isActive }" @click="imageSelect(4)">
+                    <div class="thumb id4" :class="activeImage === 4 ? 'active' : ''" @click="imageSelect(4)">
                         <img :src="slides[4].image" alt="slides[4].title" />
                     </div>
                 </div>

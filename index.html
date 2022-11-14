@@ -13,7 +13,7 @@
 
     <div id="app">
 
-        <div class="container">
+        <div @mouseover="hover = true" @mouseleave="hover = false" class="container">
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
@@ -27,12 +27,12 @@
                 </div>
 
                 <div class="thumbs">
-                    <div class="prev" @click="prevImage"></div>
-                    <div class="next" @click="nextImage"></div>
-                    <div class="thumb id0" :class="activeImage === 0 ? 'active' : ''" @click="imageSelect(0)">
-                        <img :src="slides[0].image" alt="slides[0].title" />
+                    <!-- <div class="prev" @click="prevImage"></div>
+                    <div class="next" @click="nextImage"></div> -->
+                    <div v-for="(thumb, index) in slides" class="thumb id0" :class="activeImage === index ? 'active' : ''" @click="imageSelect(index)">
+                        <img :src="slides[index].image" alt="slides[index].title" />
                     </div>
-                    <div class="thumb id1" :class="activeImage === 1 ? 'active' : ''" @click="imageSelect(1)"> 
+                    <!-- <div class="thumb id1" :class="activeImage === 1 ? 'active' : ''" @click="imageSelect(1)"> 
                         <img :src="slides[1].image" alt="slides[1].title" />
                     </div>
                     <div class="thumb id2" :class="activeImage === 2 ? 'active' : ''" @click="imageSelect(2)">
@@ -42,7 +42,7 @@
                         <img :src="slides[3].image" alt="slides[3].title" />
                     </div>
                     <div class="thumb id4" :class="activeImage === 4 ? 'active' : ''" @click="imageSelect(4)">
-                        <img :src="slides[4].image" alt="slides[4].title" />
+                        <img :src="slides[4].image" alt="slides[4].title" /> -->
                     </div>
                 </div>
 

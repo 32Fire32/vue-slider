@@ -3,6 +3,8 @@ const {createApp} = Vue
 createApp({
     data(){
         return {
+            index: [0, 1, 2, 3, 4],
+            isActive: false,
             activeImage: 0,
             slides: [
                     {
@@ -31,17 +33,26 @@ createApp({
     },
     methods: {
         prevImage(){
-            this.activeImage--
-            if( this.activeImage < 0 ) {
+            document.querySelector(`.thumb:nth-child(${this.imageSelectactiveImage})`).classList.remove('active');
+            if( this.activeImage === 0 ) {
                 this.activeImage = this.slides.length - 1
-            } 
+            } else {
+                this.activeImage--
+            }
         },
 
         nextImage(){
-            this.activeImage++
-            if( this.activeImage > this.slides.length -1){
+            if( this.activeImage === this.slides.length -1){
                 this.activeImage = 0;
+            } else {
+                this.activeImage++
             }
-        }
+        },
+
+        imageSelect(numb){
+               this.activeImage = numb;
+               console.log(this.activeImage);
+        },       
+
     }
 }).mount('#app');

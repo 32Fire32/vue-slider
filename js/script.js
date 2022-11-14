@@ -3,7 +3,6 @@ const {createApp} = Vue
 createApp({
     data(){
         return {
-            index: [0, 1, 2, 3, 4],
             isActive: false,
             activeImage: 0,
             slides: [
@@ -51,14 +50,17 @@ createApp({
         imageSelect(numb){
                this.activeImage = numb;
                console.log(this.activeImage);
-        },       
+        },   
+        
+        aPlay: function(){
+            this.activeImage++;
+            console.log(this.activeImage);
+        }
 
     },
 
     mounted() {
-        setInterval(function(){
-            this.activeImage++
-        }, 3000);
+        setInterval(this.aPlay, 3000);
       }
 
 }).mount('#app');

@@ -3,8 +3,7 @@ const {createApp} = Vue
 createApp({
     data(){
         return {
-            hover: false,
-            isActive: false,
+            stopAutoplay: false,
             activeImage: 0,
             slides: [
                     {
@@ -48,22 +47,24 @@ createApp({
             }
         },
 
-        imageSelect(numb){
-               this.activeImage = numb;
+        imageSelect(index){
+               this.activeImage = index;
                console.log(this.activeImage);
         },
 
-        stop(){
-            console.log(this.hover);
-            if (this.hover){
-                clearInterval(aPlay);
-            }
+        hoverTrue: function(){
+            this.stopAutoplay = true;
         }
 
     },
 
     mounted() {
-        let aPlay = setInterval(this.prevImage, 3000);
+        const aPlay = setInterval(this.prevImage, 3000);
+        console.log(this.stopAutoplay);
+
+        if (this.stopAutoplay){
+            clearInterval(aPlay);
+        }
       }
 
 }).mount('#app');

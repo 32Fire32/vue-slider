@@ -54,17 +54,28 @@ createApp({
 
         hoverTrue: function(){
             this.stopAutoplay = true;
+            console.log(this.stopAutoplay);
+        },
+
+        altonmouse(){
+            if(this.stopAutoplay){
+             clearInterval(this.aPlay);
+            }
+        },
+
+        altonclick(){
+             clearInterval(this.aPlay);
         }
 
     },
 
     mounted() {
-        const aPlay = setInterval(this.prevImage, 3000);
+        this.aPlay = setInterval(this.prevImage, 3000);
         console.log(this.stopAutoplay);
 
-        if (this.stopAutoplay){
-            clearInterval(aPlay);
-        }
+        // if (this.stopAutoplay){
+        //     clearInterval(aPlay);
+        // }
       }
 
 }).mount('#app');

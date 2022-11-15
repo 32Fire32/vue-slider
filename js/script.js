@@ -3,7 +3,6 @@ const {createApp} = Vue
 createApp({
     data(){
         return {
-            stopAutoplay: false,
             activeImage: 0,
             slides: [
                     {
@@ -52,11 +51,6 @@ createApp({
                console.log(this.activeImage);
         },
 
-        hoverTrue: function(){
-            this.stopAutoplay = true;
-            console.log(this.stopAutoplay);
-        },
-
         altOnMouse(){
             console.log(this.stopAutoplay);
             clearInterval(this.aPlay);
@@ -66,11 +60,6 @@ createApp({
         playOneMouse(){
             this.aPlay = setInterval(this.prevImage, 3000);
         },
-
-        altonclick(){
-             clearInterval(this.aPlay);
-        }
-
     },
 
     mounted() {
